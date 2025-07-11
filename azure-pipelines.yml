@@ -26,7 +26,7 @@ stages:
           - task: AzureCLI@1
             displayName: 'Terraform Plan'
             inputs:
-              azureSubscription: '$(azureSubscription)'
+              azureSubscription: 'f9703f5b-83a3-4d1e-9872-e4b59e50de6e'
               scriptLocation: inlineScript
               inlineScript: |
                 echo "##[section]Instalando Terraform $(tfVersion)..."
