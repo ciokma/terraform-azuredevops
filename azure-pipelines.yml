@@ -9,7 +9,7 @@ pool:
 variables:
   azureRMServiceConnection: 'terraform'
   environmentName: 'dev'
-  tfVersion: '1.5.7'
+  tfVersion: '1.7.3'
 
 stages:
   - stage: TerraformPlanAndApply
