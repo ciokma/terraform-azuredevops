@@ -1,6 +1,6 @@
 # Terraform
-# *.tfstate
-# *.tfstate.*
+*.tfstate
+*.tfstate.*
 .terraform/
 crash.log
 
@@ -10,6 +10,7 @@ crash.log
 # Sensitive variable files
 *.tfvars
 *.tfvars.json
+terraform.tfvars
 
 # Terraform plan output
 *.plan

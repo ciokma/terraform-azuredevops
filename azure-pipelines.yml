@@ -9,7 +9,7 @@ pool:
 variables:
   azureRMServiceConnection: 'terraform'
   environmentName: 'dev'
-  tfVersion: '1.7.3'
+  tfVersion: '1.5.7'
 
 stages:
   - stage: TerraformPlanAndApply
@@ -38,6 +38,8 @@ stages:
                 echo "##[section]Inicializando Terraform..."
                 terraform init
 
+                echo "##[section]Haciendo Terraform Plan..."
+                terraform plan -out=tfplan
 
           - task: AzureCLI@1
             displayName: 'Terraform Apply'
