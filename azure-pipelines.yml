@@ -23,23 +23,7 @@ stages:
               versionSpec: '3.x'
               addToPath: true
 
-          - task: AzureCLI@1
-            displayName: 'Terraform Plan'
-            inputs:
-              azureSubscription: '$(azureRMServiceConnection)'
-              scriptLocation: inlineScript
-              inlineScript: |
-                echo "##[section]Instalando Terraform $(tfVersion)..."
-                curl -sLo terraform.zip https://releases.hashicorp.com/terraform/$(tfVersion)/terraform_$(tfVersion)_linux_amd64.zip
-                unzip terraform.zip
-                sudo mv terraform /usr/local/bin/
-                terraform version
-
-                echo "##[section]Inicializando Terraform..."
-                terraform init
-
-                echo "##[section]Haciendo Terraform Plan..."
-                terraform plan -out=tfplan
+   
 
           - task: AzureCLI@1
             displayName: 'Terraform Apply'

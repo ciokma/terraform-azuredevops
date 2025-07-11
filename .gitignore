@@ -1,6 +1,6 @@
 # Terraform
-*.tfstate
-*.tfstate.*
+# *.tfstate
+# *.tfstate.*
 .terraform/
 crash.log
 
