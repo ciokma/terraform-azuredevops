@@ -7,7 +7,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  azureSubscription: 'Nombre-Conexión-Servicio'
+  azureRMServiceConnection: 'Terraform Dev'
   environmentName: 'dev'
   tfVersion: '1.5.7'  # Cambia esto según la versión que uses
 
