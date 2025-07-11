@@ -103,3 +103,9 @@ resource "azurerm_key_vault_secret" "acr_admin_password" {
   value        = random_password.acr_admin_password.result
   key_vault_id = local.key_vault_id
 }
+
+resource "azurerm_key_vault_secret" "acr_admin_password" {
+  name         = "acr-admin-password"
+  value        = random_password.acr_admin_password.result
+  key_vault_id = local.key_vault_id
+}
