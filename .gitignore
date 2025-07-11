@@ -1,9 +1,7 @@
-# Terraform state
+# Terraform
 *.tfstate
-*.tfstate.backup
 *.tfstate.*
-terraform.tfstate
-# Crash log
+.terraform/
 crash.log
 
 # Ignore .terraform dir
