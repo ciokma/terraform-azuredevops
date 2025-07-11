@@ -7,9 +7,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  azureRMServiceConnection: 'Terraform Dev'
+  azureRMServiceConnection: 'terraform'
   environmentName: 'dev'
-  tfVersion: '1.5.7'  # Cambia esto según la versión que uses
+  tfVersion: '1.5.7'
 
 stages:
   - stage: TerraformPlanAndApply
@@ -26,7 +26,7 @@ stages:
           - task: AzureCLI@1
             displayName: 'Terraform Plan'
             inputs:
-              azureSubscription: 'f9703f5b-83a3-4d1e-9872-e4b59e50de6e'
+              azureSubscription: '$(azureRMServiceConnection)'
               scriptLocation: inlineScript
               inlineScript: |
                 echo "##[section]Instalando Terraform $(tfVersion)..."
@@ -44,7 +44,7 @@ stages:
           - task: AzureCLI@1
             displayName: 'Terraform Apply'
             inputs:
-              azureSubscription: '$(azureSubscription)'
+              azureSubscription: '$(azureRMServiceConnection)'
               scriptLocation: inlineScript
               inlineScript: |
                 echo "##[section]Aplicando Terraform Plan..."
